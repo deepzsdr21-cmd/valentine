@@ -1,10 +1,10 @@
 body {
-  background: pink;
+  background: #f6c1d1;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: Arial;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
 }
 
 .card {
@@ -12,28 +12,46 @@ body {
   padding: 30px;
   border-radius: 20px;
   text-align: center;
-}
-
-.buttons {
-  margin-top: 20px;
-  position: relative;
-  height: 50px;
+  width: 320px;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 button {
-  padding: 10px 25px;
+  padding: 12px 30px;
   border: none;
-  border-radius: 20px;
+  border-radius: 30px;
   font-size: 16px;
   cursor: pointer;
+  position: absolute;
 }
 
 #yes {
-  background: hotpink;
+  background: #ff4d79;
   color: white;
+  bottom: 40px;
+  left: 40px;
 }
 
 #no {
-  position: absolute;
-  right: 0;
+  background: #ddd;
+  bottom: 40px;
+  right: 40px;
+  transition: transform 0.2s ease;
+}
+
+#popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+#popup img {
+  width: 300px;
+  border-radius: 20px;
 }
