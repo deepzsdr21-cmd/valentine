@@ -1,4 +1,3 @@
-/* PAGE CENTERING */
 body {
   margin: 0;
   height: 100vh;
@@ -13,7 +12,6 @@ body {
   align-items: center;
 }
 
-/* CARD */
 .card {
   background: white;
   padding: 30px;
@@ -23,7 +21,7 @@ body {
   box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
-/* ANIMATED HEART */
+/* animated heart */
 .heart {
   font-size: 42px;
   margin-bottom: 10px;
@@ -31,24 +29,23 @@ body {
 }
 
 @keyframes pulse {
-  0%   { transform: scale(1); }
-  50%  { transform: scale(1.25); }
+  0% { transform: scale(1); }
+  50% { transform: scale(1.25); }
   100% { transform: scale(1); }
 }
 
-/* QUESTION */
 h2 {
   margin: 10px 0 25px;
 }
 
-/* BUTTON AREA */
+/* button box */
 .button-area {
   position: relative;
   width: 100%;
   height: 120px;
 }
 
-/* BUTTONS */
+/* buttons */
 button {
   padding: 12px 30px;
   border: none;
@@ -65,13 +62,14 @@ button {
   bottom: 20px;
 }
 
+/* 🚨 IMPORTANT: No uses LEFT + TOP ONLY */
 #no {
   background: #ddd;
-  right: 20px;
-  bottom: 20px;
+  left: 220px;
+  top: 60px;
 }
 
-/* POPUP */
+/* popup */
 #popup {
   position: fixed;
   inset: 0;
