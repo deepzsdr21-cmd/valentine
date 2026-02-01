@@ -12,11 +12,17 @@ body {
   padding: 30px;
   border-radius: 20px;
   text-align: center;
-  width: 320px;
+  width: 340px;
   position: absolute;
-  top: 30%;
+  top: 25%;
   left: 50%;
   transform: translateX(-50%);
+}
+
+.cute-gif {
+  width: 120px;
+  margin-bottom: 15px;
+  border-radius: 12px;
 }
 
 button {
@@ -39,7 +45,6 @@ button {
   background: #ddd;
   bottom: 40px;
   right: 40px;
-  transition: transform 0.2s ease;
 }
 
 #popup {
@@ -54,4 +59,17 @@ button {
 #popup img {
   width: 300px;
   border-radius: 20px;
+}
+
+/* SCREEN SHAKE */
+@keyframes shake {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-5px, 5px); }
+  50% { transform: translate(5px, -5px); }
+  75% { transform: translate(-5px, -5px); }
+  100% { transform: translate(0, 0); }
+}
+
+.shake {
+  animation: shake 0.3s;
 }
