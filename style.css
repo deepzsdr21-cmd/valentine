@@ -21,8 +21,7 @@ body {
   position: relative;
   width: 100%;
   height: 120px;
-  border: 2px dashed #ffb6c1;
-  border-radius: 12px;
+  
 }
 
 button {
@@ -37,14 +36,16 @@ button {
 #yes {
   background: #ff4d79;
   color: white;
+  position: absolute;
   left: 20px;
   bottom: 20px;
 }
 
 #no {
   background: #ddd;
-  right: 20px;
-  bottom: 20px;
+  position: absolute;
+  left: 220px;
+  top: 50px;
 }
 
 /* POPUP */
