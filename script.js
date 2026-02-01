@@ -4,11 +4,14 @@ const popup = document.getElementById("popup");
 const area = document.querySelector(".button-area");
 
 noBtn.addEventListener("mouseenter", () => {
-  const areaRect = area.getBoundingClientRect();
-  const btnRect = noBtn.getBoundingClientRect();
+  const areaWidth = area.clientWidth;
+  const areaHeight = area.clientHeight;
 
-  const maxX = areaRect.width - btnRect.width - 10;
-  const maxY = areaRect.height - btnRect.height - 10;
+  const btnWidth = noBtn.offsetWidth;
+  const btnHeight = noBtn.offsetHeight;
+
+  const maxX = areaWidth - btnWidth;
+  const maxY = areaHeight - btnHeight;
 
   const x = Math.random() * maxX;
   const y = Math.random() * maxY;
