@@ -43,9 +43,11 @@ button {
 
 #no {
   background: #ddd;
+  position: absolute;
   bottom: 40px;
   right: 40px;
 }
+
 
 /* SCREEN SHAKE */
 @keyframes shake {
