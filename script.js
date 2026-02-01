@@ -1,40 +1,21 @@
 const noBtn = document.getElementById("no");
 const yesBtn = document.getElementById("yes");
 const popup = document.getElementById("popup");
-
-let moving = false;
+const area = document.querySelector(".button-area");
 
 noBtn.addEventListener("mouseenter", () => {
-  moving = true;
+  const areaRect = area.getBoundingClientRect();
+  const btnRect = noBtn.getBoundingClientRect();
 
-  // unlock position so JS can move it
-  noBtn.style.bottom = "auto";
-  noBtn.style.right = "auto";
+  const maxX = areaRect.width - btnRect.width - 10;
+  const maxY = areaRect.height - btnRect.height - 10;
 
-  moveNo();
-});
-
-noBtn.addEventListener("mouseleave", () => {
-  moving = false;
-
-  // reset to original position
-  noBtn.style.left = "auto";
-  noBtn.style.top = "auto";
-  noBtn.style.bottom = "40px";
-  noBtn.style.right = "40px";
-});
-
-function moveNo() {
-  if (!moving) return;
-
-  const x = Math.random() * (window.innerWidth - 120);
-  const y = Math.random() * (window.innerHeight - 60);
+  const x = Math.random() * maxX;
+  const y = Math.random() * maxY;
 
   noBtn.style.left = x + "px";
   noBtn.style.top = y + "px";
-
-  setTimeout(moveNo, 120); // speed of movement
-}
+});
 
 yesBtn.addEventListener("click", () => {
   popup.style.display = "flex";
