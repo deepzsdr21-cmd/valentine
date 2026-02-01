@@ -3,8 +3,9 @@ body {
   height: 100vh;
   margin: 0;
   font-family: Arial, sans-serif;
-  position: relative;
-  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .card {
@@ -12,16 +13,15 @@ body {
   padding: 30px;
   border-radius: 20px;
   text-align: center;
-  width: 340px;
-  position: absolute;
-  top: 25%;
-  left: 50%;
-  transform: translateX(-50%);
+  width: 360px;
 }
 
-.cute-gif {
-  width: 120px;
-  margin-bottom: 15px;
+.button-area {
+  margin-top: 30px;
+  position: relative;
+  width: 100%;
+  height: 120px;
+  border: 2px dashed #ffb6c1;
   border-radius: 12px;
 }
 
@@ -37,27 +37,27 @@ button {
 #yes {
   background: #ff4d79;
   color: white;
-  bottom: 40px;
-  left: 40px;
+  left: 20px;
+  bottom: 20px;
 }
 
 #no {
   background: #ddd;
-  position: absolute;
-  bottom: 40px;
-  right: 40px;
+  right: 20px;
+  bottom: 20px;
 }
 
-
-/* SCREEN SHAKE */
-@keyframes shake {
-  0% { transform: translate(0, 0); }
-  25% { transform: translate(-5px, 5px); }
-  50% { transform: translate(5px, -5px); }
-  75% { transform: translate(-5px, -5px); }
-  100% { transform: translate(0, 0); }
+/* POPUP */
+#popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: none; /* VERY IMPORTANT */
+  justify-content: center;
+  align-items: center;
 }
 
-.shake {
-  animation: shake 0.3s infinite;
+#popup img {
+  width: 300px;
+  border-radius: 20px;
 }
