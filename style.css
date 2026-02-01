@@ -1,0 +1,39 @@
+body {
+  background: pink;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial;
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.buttons {
+  margin-top: 20px;
+  position: relative;
+  height: 50px;
+}
+
+button {
+  padding: 10px 25px;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#yes {
+  background: hotpink;
+  color: white;
+}
+
+#no {
+  position: absolute;
+  right: 0;
+}
