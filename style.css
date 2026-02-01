@@ -1,29 +1,54 @@
+/* PAGE CENTERING */
 body {
-  background: #f6c1d1;
-  height: 100vh;
   margin: 0;
+  height: 100vh;
+  background: #f6c1d1;
   font-family: Arial, sans-serif;
+}
+
+.container {
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+/* CARD */
 .card {
   background: white;
   padding: 30px;
-  border-radius: 20px;
-  text-align: center;
+  border-radius: 22px;
   width: 360px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
+/* ANIMATED HEART */
+.heart {
+  font-size: 42px;
+  margin-bottom: 10px;
+  animation: pulse 1.2s infinite;
+}
+
+@keyframes pulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.25); }
+  100% { transform: scale(1); }
+}
+
+/* QUESTION */
+h2 {
+  margin: 10px 0 25px;
+}
+
+/* BUTTON AREA */
 .button-area {
-  margin-top: 30px;
   position: relative;
   width: 100%;
   height: 120px;
-  
 }
 
+/* BUTTONS */
 button {
   padding: 12px 30px;
   border: none;
@@ -36,16 +61,14 @@ button {
 #yes {
   background: #ff4d79;
   color: white;
-  position: absolute;
   left: 20px;
   bottom: 20px;
 }
 
 #no {
   background: #ddd;
-  position: absolute;
-  left: 220px;
-  top: 50px;
+  right: 20px;
+  bottom: 20px;
 }
 
 /* POPUP */
@@ -53,7 +76,7 @@ button {
   position: fixed;
   inset: 0;
   background: rgba(0,0,0,0.6);
-  display: none; /* VERY IMPORTANT */
+  display: none;
   justify-content: center;
   align-items: center;
 }
@@ -62,9 +85,3 @@ button {
   width: 300px;
   border-radius: 20px;
 }
-
-.emoji {
-  font-size: 40px;
-  margin-bottom: 10px;
-}
-
