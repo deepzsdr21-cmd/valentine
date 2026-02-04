@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>💘 Valentine Quest</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      color: white;
+    }
+
+    .screen {
+      display: none;
+      text-align: center;
+      padding: 20px;
+      width: 100%;
+      max-width: 400px;
+      animation: fadeIn 0.6s ease;
+    }
+
+    .screen.active {
+      display: block;
+    }
+
+    h1, h2 {
+      margin-bottom: 20px;
+    }
+
+    p {
+      opacity: 0.9;
+    }
+
+    button {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
+      margin: 10px;
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      background: white;
+      color: #ff4d6d;
+      font-weight: bold;
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.3);
+      color: white;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+    }
+
+    .floating-hearts::before {
+      content: "💖 💕 💘 💗 💓";
+      position: absolute;
+      font-size: 24px;
+      animation: float 6s linear infinite;
+      opacity: 0.5;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(100vh); }
+      100% { transform: translateY(-100vh); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    #runaway {
+      position: relative;
+    }
+
+    .confetti {
+      position: fixed;
+      width: 8px;
+      height: 8px;
+      background: white;
+      animation: fall 3s linear infinite;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(-10px); }
+      100% { transform: translateY(110vh); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- SCREEN 1 -->
+  <div class="screen active floating-hearts" id="s1">
+    <h1>Hey you 👀💖</h1>
+    <p>Before you scroll away… I have something important.</p>
+    <button class="btn-primary" onclick="next(2)">Okay, I’m listening 😌</button>
+  </div>
+
+  <!-- SCREEN 2 -->
+  <div class="screen" id="s2">
+    <h2>Quick question 🫣</h2>
+    <p>Do you know how long I’ve been waiting to ask you this?</p>
+    <button class="btn-primary" onclick="next(3)">Tell me 🥺</button>
+    <button class="btn-secondary" onclick="next(3)">Probably too long 😏</button>
+  </div>
+
+  <!-- SCREEN 3 -->
+  <div class="screen" id="s3">
+    <h2>Important scenario 😈</h2>
+    <p>If I steal your hoodie, what will you do?</p>
+    <button class="btn-primary" onclick="next(4)">Let you keep it ❤️</button>
+    <button class="btn-secondary" id="runaway">Take it back 😤</button>
+  </div>
+
+  <!-- SCREEN 4 -->
+  <div class="screen" id="s4">
+    <h2>Okay… real talk 🫶</h2>
+    <p>Life gets chaotic sometimes.<br>Would you still choose me?</p>
+    <button class="btn-primary" onclick="next(5)">Always 💖</button>
+    <button class="btn-secondary" onclick="next(5)">Tell me more 🥹</button>
+  </div>
+
+  <!-- FINAL SCREEN -->
+  <div class="screen" id="s5">
+    <h1>So… 💍</h1>
+    <h2>Will you be my Valentine?</h2>
+    <button class="btn-primary" onclick="celebrate()">YES 😍</button>
+    <button class="btn-primary" onclick="celebrate()">YES BUT LOUDER 💘</button>
+  </div>
+
+  <script>
+    function next(n) {
+      document.querySelectorAll(".screen").forEach(s => s.classList.remove("active"));
+      document.getElementById("s" + n).classList.add("active");
+    }
+
+    // Runaway button logic 😈
+    const noBtn = document.getElementById("runaway");
+    noBtn.addEventListener("mouseenter", () => {
+      noBtn.style.transform =
+        `translate(${Math.random() * 150 - 75}px, ${Math.random() * 150 - 75}px)`;
+    });
+
+    // Confetti 🎉
+    function celebrate() {
+      for (let i = 0; i < 80; i++) {
+        const confetti = document.createElement("div");
+        confetti.classList.add("confetti");
+        confetti.style.left = Math.random() * 100 + "vw";
+        confetti.style.background = ["#fff", "#ff4d6d", "#ffd6e0"][Math.floor(Math.random()*3)];
+        confetti.style.animationDuration = Math.random() * 2 + 2 + "s";
+        document.body.appendChild(confetti);
+      }
+
+      document.querySelector("#s5 h2").innerHTML = "YAY 💖 I knew it!";
+    }
+  </script>
+
+</body>
+</html>
